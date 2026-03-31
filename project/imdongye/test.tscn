@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d1vskr2gq4wnf"]
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_bmugg"]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.5,
+&"depth_blur": 0.0,
+&"flat_terrain_normals": false,
+&"ground_level": -20.0,
+&"mipmap_bias": 1.0,
+&"region_blend": 0.25,
+&"shader_uniforms": null,
+&"shader_uniforms::general": null,
+&"shader_uniforms::mipmaps": null
+}
+show_checkered = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wdke"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+metadata/terrain3d_generated_material = true
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_23cai"]
+generated_type = 1
+height_offset = 0.5
+density = 10.0
+material_override = SubResource("StandardMaterial3D_8wdke")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_caxq2"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_23cai")])
+
+[node name="Test01" type="Node" unique_id=704524369]
+
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=1526721935]
+data_directory = "res://imdongye/data"
+material = SubResource("Terrain3DMaterial_bmugg")
+assets = SubResource("Terrain3DAssets_caxq2")
+displacement_sharpness = 0.5
+show_checkered = true
+top_level = true
+metadata/_edit_lock_ = true
