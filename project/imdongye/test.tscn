@@ -1,50 +1,25 @@
 [gd_scene format=3 uid="uid://d1vskr2gq4wnf"]
 
-[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_bmugg"]
-_shader_parameters = {
-&"bias_distance": 512.0,
-&"blend_sharpness": 0.5,
-&"depth_blur": 0.0,
-&"flat_terrain_normals": false,
-&"ground_level": -20.0,
-&"mipmap_bias": 1.0,
-&"region_blend": 0.25,
-&"shader_uniforms": null,
-&"shader_uniforms::general": null,
-&"shader_uniforms::mipmaps": null
-}
-show_checkered = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wdke"]
-transparency = 4
-cull_mode = 2
-vertex_color_use_as_albedo = true
-backlight_enabled = true
-backlight = Color(0.5, 0.5, 0.5, 1)
-distance_fade_mode = 1
-distance_fade_min_distance = 128.0
-distance_fade_max_distance = 96.0
-metadata/terrain3d_generated_material = true
-
-[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_23cai"]
-generated_type = 1
-height_offset = 0.5
-density = 10.0
-material_override = SubResource("StandardMaterial3D_8wdke")
-last_lod = 0
-last_shadow_lod = 0
-lod0_range = 128.0
-
-[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_caxq2"]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_23cai")])
+[ext_resource type="Terrain3DMaterial" uid="uid://dxdwkarrr2c01" path="res://imdongye/t3d_material.tres" id="1_caxq2"]
+[ext_resource type="Terrain3DAssets" uid="uid://cjyvmf1d54um8" path="res://imdongye/t3d_assets.tres" id="2_krsvd"]
+[ext_resource type="Material" uid="uid://s5bvckua7veq" path="res://imdongye/t3d_oceon_material.tres" id="3_73ca4"]
+[ext_resource type="PackedScene" uid="uid://b4nhl2g3htyen" path="res://imdongye/assets/industrial_brickruin_doo_extracted/SM_vczkbbc_tier_3.gltf" id="4_73ca4"]
+[ext_resource type="PackedScene" uid="uid://udxivnt0g8kk" path="res://imdongye/assets/jacaranda_tree_1k.gltf/jacaranda_tree_1k.gltf" id="5_rpi7p"]
 
 [node name="Test01" type="Node" unique_id=704524369]
 
 [node name="Terrain3D" type="Terrain3D" parent="." unique_id=1526721935]
 data_directory = "res://imdongye/data"
-material = SubResource("Terrain3DMaterial_bmugg")
-assets = SubResource("Terrain3DAssets_caxq2")
+material = ExtResource("1_caxq2")
+assets = ExtResource("2_krsvd")
 displacement_sharpness = 0.5
-show_checkered = true
+ocean_enabled = true
+ocean_material = ExtResource("3_73ca4")
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="geo" parent="." unique_id=518053622 instance=ExtResource("4_73ca4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.80639, 0, 30.488346)
+
+[node name="jacaranda_tree_1k" parent="." unique_id=2004065051 instance=ExtResource("5_rpi7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.818245, 0, 37.597847)
