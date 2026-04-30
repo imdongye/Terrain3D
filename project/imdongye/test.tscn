@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://deo0gxkmk2ahd" path="res://addons/sky_3d/src/Sky3D.gd" id="14_g7skx"]
 [ext_resource type="Script" uid="uid://b4tkplvh7fq40" path="res://addons/sky_3d/src/SkyDome.gd" id="15_x1mbp"]
 [ext_resource type="Script" uid="uid://cjmkcj8hwm7ts" path="res://addons/sky_3d/src/TimeOfDay.gd" id="16_yao5m"]
+[ext_resource type="Script" uid="uid://b4mkae67rmorl" path="res://imdongye/src/ball_body.gd" id="17_ibja0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_arq7j"]
 shader = ExtResource("7_akldy")
@@ -46,7 +47,7 @@ shader_parameter/moon_texture_flip_u = false
 shader_parameter/moon_texture_flip_v = false
 shader_parameter/moon_size = 0.07
 shader_parameter/atm_moon_mie_tint = Color(0.137255, 0.184314, 0.292196, 1)
-shader_parameter/atm_moon_mie_intensity = 0.13596662789583205
+shader_parameter/atm_moon_mie_intensity = 0.0
 shader_parameter/atm_moon_partial_mie_phase = Vector3(0.36, 1.64, 1.6)
 shader_parameter/starmap_color = Color(0.709804, 0.709804, 0.709804, 0.854902)
 shader_parameter/starmap_texture = ExtResource("13_ajgj1")
@@ -70,8 +71,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.69806135, 0.69806135)
-shader_parameter/cirrus_position2 = Vector2(0.69806135, 0.69806135)
+shader_parameter/cirrus_position1 = Vector2(0.8352217, 0.8352217)
+shader_parameter/cirrus_position2 = Vector2(0.8352217, 0.8352217)
 shader_parameter/cirrus_texture = ExtResource("8_ibja0")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -81,7 +82,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(3.4905078, 3.4905078)
+shader_parameter/cumulus_position = Vector2(127.53482, 127.53482)
 shader_parameter/cumulus_texture = ExtResource("9_0r25o")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -106,6 +107,10 @@ tonemap_mode = 3
 tonemap_white = 6.0
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jp6un"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_akldy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ibja0"]
 
 [node name="Test01" type="Node" unique_id=704524369]
 
@@ -164,3 +169,14 @@ dome_path = NodePath("../SkyDome")
 current_time = 10.75
 day = 13
 month = 5
+
+[node name="BallBody" type="CharacterBody3D" parent="." unique_id=195309897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.36895, 5.0018005, 21.896278)
+script = ExtResource("17_ibja0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BallBody" unique_id=534696616]
+mesh = SubResource("SphereMesh_akldy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BallBody" unique_id=786325704]
+shape = SubResource("SphereShape3D_ibja0")
+debug_fill = false
