@@ -4,7 +4,7 @@ project/addons/explore-editor-theme/
 project/_dev/
 project/_export/
 project/_tests/
-project/test/
+project/test/*
 src/_archive/
 src/gen/
 _misc/
@@ -39,5 +39,4 @@ export_presets.cfg
 .vscode/
 .vs/
 
-project/imdongye/assets/*
-project/imdongye/assets.zip
+!project/test/course

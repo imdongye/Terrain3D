@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Terrain3D"
 run/main_scene="uid://d1vskr2gq4wnf"
-config/features=PackedStringArray("4.6")
+config/features=PackedStringArray("4.6", "C#")
 config/icon="res://icon.png"
 
 [display]

@@ -1,9 +1,9 @@
 [gd_resource type="Terrain3DAssets" format=3 uid="uid://cjyvmf1d54um8"]
 
-[ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://demo/assets/textures/rock023_alb_ht.png" id="1_lva2d"]
-[ext_resource type="Texture2D" uid="uid://dabyathlpy04p" path="res://demo/assets/textures/rock023_nrm_rgh.png" id="2_xstvk"]
-[ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://demo/assets/textures/ground037_alb_ht.png" id="3_j25wr"]
-[ext_resource type="Texture2D" uid="uid://g80pbqtklcws" path="res://demo/assets/textures/ground037_nrm_rgh.png" id="4_ydtxb"]
+[ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://demo/assets/textures/rock023_alb_ht.png" id="1_f57hm"]
+[ext_resource type="Texture2D" uid="uid://dabyathlpy04p" path="res://demo/assets/textures/rock023_nrm_rgh.png" id="2_46br6"]
+[ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://demo/assets/textures/ground037_alb_ht.png" id="3_52ax0"]
+[ext_resource type="Texture2D" uid="uid://g80pbqtklcws" path="res://demo/assets/textures/ground037_nrm_rgh.png" id="4_mfi5p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wdke"]
 transparency = 4
@@ -27,14 +27,14 @@ lod0_range = 128.0
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_jr01a"]
 name = "rock023_alb_ht"
-albedo_texture = ExtResource("1_lva2d")
-normal_texture = ExtResource("2_xstvk")
+albedo_texture = ExtResource("1_f57hm")
+normal_texture = ExtResource("2_46br6")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_au6rk"]
 name = "ground037_alb_ht"
 id = 1
-albedo_texture = ExtResource("3_j25wr")
-normal_texture = ExtResource("4_ydtxb")
+albedo_texture = ExtResource("3_52ax0")
+normal_texture = ExtResource("4_mfi5p")
 
 [resource]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_23cai")])
